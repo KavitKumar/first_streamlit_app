@@ -4,7 +4,7 @@ import pandas
 import requests
 
 responce = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(responce)
+streamlit.text(responce.json())
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
