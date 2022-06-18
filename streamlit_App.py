@@ -2,8 +2,8 @@ import streamlit
 import pandas
 
 import requests
-
-responce = requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
+user_input = streamlit.text_input("eneter your fruit","Kiwi")
+responce = requests.get("https://fruityvice.com/api/fruit/"+user_input)
 streamlit.text(responce.json())
 normalize = pandas.json_normalize(responce.json())
 streamlit.dataframe(normalize)
