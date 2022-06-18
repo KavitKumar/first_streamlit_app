@@ -3,7 +3,7 @@ import pandas
 
 import requests
 
-responce = requests.get("https://fruityvice.com/api/fruit/watermelon")
+responce = requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
 streamlit.text(responce.json())
 normalize = pandas.json_normalize(responce.json())
 streamlit.dataframe(normalize)
