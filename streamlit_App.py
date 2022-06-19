@@ -1,8 +1,8 @@
 import streamlit
-import pandas
-
-
+#import pandas
+import snowflake.connector
 import requests
+from urllib.error import URLError
 user_input = streamlit.text_input("eneter your fruit","Kiwi")
 responce = requests.get("https://fruityvice.com/api/fruit/"+user_input)
 streamlit.text(responce.json())
@@ -18,8 +18,8 @@ showfruit = my_fruit_list.loc[selectfruit]
 streamlit.dataframe(showfruit)
 streamlit.dataframe(my_fruit_list)
 streamlit.dataframe(showfruit)
-import snowflake.connector
 
+streamlit.stop()
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("insert into fruit_load_list values ('from streamlit');")
