@@ -1,6 +1,6 @@
 import streamlit
 import pandas
-
+import snowflake.connector
 
 import requests
 user_input = streamlit.text_input("eneter your fruit","Kiwi")
@@ -18,7 +18,7 @@ showfruit = my_fruit_list.loc[selectfruit]
 streamlit.dataframe(showfruit)
 streamlit.dataframe(my_fruit_list)
 streamlit.dataframe(showfruit)
-#import snowflake.connector
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
