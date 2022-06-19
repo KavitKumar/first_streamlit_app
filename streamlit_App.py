@@ -13,8 +13,8 @@ try:
     normalize = pandas.json_normalize(responce.json())
     streamlit.dataframe(normalize)
     
- #except URLError as e:
-    #streamlit.error()
+except URLError as e:
+    streamlit.error()
 
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
