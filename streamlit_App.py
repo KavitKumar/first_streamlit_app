@@ -47,11 +47,3 @@ if streamlit.button('Grt Fruit Load List'):
 
         
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("insert into fruit_load_list values ('from streamlit');")
-my_data_row = my_cur.fetchall()
-streamlit.text("Hello from Snowflake:")
-streamlit.text(my_data_row)
-streamlit.dataframe(my_data_row)
-user_input2 = streamlit.text_input("eneter your fruit","Kiwi")
