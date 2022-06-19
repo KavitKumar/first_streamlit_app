@@ -12,6 +12,7 @@ try:
     streamlit.text(responce.json())
     normalize = pandas.json_normalize(responce.json())
     streamlit.dataframe(normalize)
+    
  except URLError as e:
     streamlit.error()
 
