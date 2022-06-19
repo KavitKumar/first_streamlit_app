@@ -19,8 +19,7 @@ streamlit.dataframe(showfruit)
 streamlit.dataframe(my_fruit_list)
 streamlit.dataframe(showfruit)
 import snowflake.connector
-#requirements.txt
-snowflake-connector-python
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
