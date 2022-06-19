@@ -1,7 +1,7 @@
 import streamlit
 #import pandas
 import snowflake.connector
-import requests
+#import requests
 from urllib.error import URLError
 user_input = streamlit.text_input("eneter your fruit","Kiwi")
 responce = requests.get("https://fruityvice.com/api/fruit/"+user_input)
