@@ -1,5 +1,6 @@
 import streamlit
 import pandas
+import snowflake.connector
 
 import requests
 user_input = streamlit.text_input("eneter your fruit","Kiwi")
